@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+  </head>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      background: cornflowerblue;
+      font-family: cursive;
+      text-align: center;
+      padding: 3%;
+      margin: 0;
+      height: 575px;
+    }
+    input {
+      margin: 1%;
+      padding: 19px;
+      border: 0;
+      border-radius: 12px;
+    }
+    h1 {
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    button {
+      margin: 17px 6px;
+      padding: 12px;
+    }
+    #display {
+      border-bottom: 1px solid #000;
+    }
+    a {
+      font-size: 30px;
+      text-decoration: none;
+    }
+    span {
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <h1>cdsd calculator</h1>
+      <form action="#">
+        <input type="search" id="first" placeholder="enter a number" /> <br />
+        <input type="search" id="sec" placeholder="enter a number" /> <br />
+        <input type="search" id="third" placeholder="enter a number" /> <br />
+        <button type="button" onclick="addition()">➕</button>
+        <button type="button" onclick="subtraction()">➖</button>
+        <button type="button" onclick="division()">➗</button>
+        <button type="button" onclick="multiplication()">❌</button> <br />
+        <a href="calc.html">🔁</a>
+        <h1>Result:</h1>
+        <br />
+        <span id="display"></span>
+      </form>
+    </div>
+
+    <script>
+      function getElementId(id) {
+        return document.getElementById(id).value
+      }
+      function addition() {
+        let f = getElementId("first")
+        let s = document.getElementById("sec").value;
+        let t = document.getElementById("third").value;
+        let result = +f + +s + +t;
+        document.getElementById("display").innerHTML = "the sum is " + result;
+      }
+      function subtraction() {
+        let f = document.getElementById("first").value;
+        let s = document.getElementById("sec").value;
+        let t = document.getElementById("third").value;
+        let result = +f - +s - +t;
+        document.getElementById("display").innerHTML =
+          "the subtraction is " + result;
+      }
+      function division() {
+        let f = document.getElementById("first").value;
+        let s = document.getElementById("sec").value;
+        let t = document.getElementById("third").value;
+        let result = +f / +s / +t;
+        document.getElementById("display").innerHTML =
+          "the division is " + result;
+      }
+      function multiplication() {
+        let f = document.getElementById("first").value;
+        let s = document.getElementById("sec").value;
+        let t = document.getElementById("third").value;
+        let result = +f * +s * +t;
+        document.getElementById("display").innerHTML =
+          "the product is " + result;
+      }
+    </script>
+  </body>
+</html>
